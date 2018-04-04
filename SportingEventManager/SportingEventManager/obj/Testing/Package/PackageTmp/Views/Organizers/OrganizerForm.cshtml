@@ -1,0 +1,45 @@
+﻿@model SportingEventManager.ViewModels.OrganizerFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Organizer</h2>
+
+@using (Html.BeginForm("Save", "Organizers"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+    <div class="form-group">
+        @Html.LabelFor(m => m.Organizer.FirstName)
+        @Html.TextBoxFor(m => m.Organizer.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Organizer.FirstName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Organizer.LastName)
+        @Html.TextBoxFor(m => m.Organizer.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Organizer.LastName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Organizer.City)
+        @Html.TextBoxFor(m => m.Organizer.City, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Organizer.City)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Organizer.State)
+        @Html.TextBoxFor(m => m.Organizer.State, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Organizer.State)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Organizer.SportsEventsIds)
+        @Html.ListBoxFor(m => m.Organizer.SportsEventsIds, new MultiSelectList(Model.SportsEvents, "Id", "Name"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Organizer.SportsEventsIds)
+    </div>
+    @Html.HiddenFor(m => m.Organizer.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>    
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

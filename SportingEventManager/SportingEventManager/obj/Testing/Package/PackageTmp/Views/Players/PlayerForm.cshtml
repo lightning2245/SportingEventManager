@@ -1,0 +1,55 @@
+﻿@model SportingEventManager.ViewModels.PlayerFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Player</h2>
+
+@using (Html.BeginForm("Save", "Players"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+    <div class="form-group">
+        @Html.LabelFor(m => m.Player.FirstName)
+        @Html.TextBoxFor(m => m.Player.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Player.FirstName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Player.LastName)
+        @Html.TextBoxFor(m => m.Player.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Player.LastName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Player.Birthdate)
+        @Html.TextBoxFor(m => m.Player.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Player.Birthdate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Player.City)
+        @Html.TextBoxFor(m => m.Player.City, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Player.City)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Player.State)
+        @Html.TextBoxFor(m => m.Player.State, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Player.State)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Player.GuardiansIds)
+        @Html.ListBoxFor(m => m.Player.GuardiansIds, new MultiSelectList(Model.Guardians, "Id", "FirstName"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Player.GuardiansIds)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Player.SportsEventsIds)
+        @Html.ListBoxFor(m => m.Player.SportsEventsIds, new MultiSelectList(Model.SportsEvents, "Id", "Name"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Player.SportsEventsIds)
+    </div>   
+    @Html.HiddenFor(m => m.Player.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>    
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../Content/bootstrap-lumen.css" rel="stylesheet">
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet">
+    <link href="../content/datatables/css/datatables.bootstrap.css" rel="stylesheet">
+    <link href="../content/typeahead.css" rel="stylesheet">
+    <link href="../content/toastr.css" rel="stylesheet">
+    <link href="../Content/site.css" rel="stylesheet">
+    <link href="../Content/navbar-fixed-side.css" rel="stylesheet">
+    <link href="../Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Content/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../Content/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="../Content/css/sb-admin.min.css" rel="stylesheet">
+    <link href="../Content/css/sb-admin.css" rel="stylesheet">
+
+    <link href="/Content/bootstrap-lumen.css" rel="stylesheet">
+    <link href="/Content/bootstrap-theme.css" rel="stylesheet">
+    <link href="/content/datatables/css/datatables.bootstrap.css" rel="stylesheet">
+    <link href="/content/typeahead.css" rel="stylesheet">
+    <link href="/content/toastr.css" rel="stylesheet">
+    <link href="/Content/site.css" rel="stylesheet">
+    <link href="/Content/navbar-fixed-side.css" rel="stylesheet">
+    <link href="/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Content/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/Content/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="/Content/css/sb-admin.min.css" rel="stylesheet">
+    <link href="/Content/css/sb-admin.css" rel="stylesheet">
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+    <script src="/Scripts/modernizr-2.8.3.js"></script>
+    <style>
+        .menuText-white {
+            font-size: small;
+            color: white;
+        }
+
+        /*a.nav-link-collapse:hover {
+            color: black;
+        }
+
+        a.nav-link-collapse:focus {
+            color: black;
+        }
+
+        a.nav-link:hover {
+            color: black
+        }
+
+        a.nav-link:focus {
+            color: black
+        }
+
+        a.collapse:hover {
+            color: black;
+        }
+
+        a.collapse:focus {
+            color: black;
+        }*/
+
+        .menuText-black {
+            font-size: medium;
+            color: black;
+        }
+
+        nav {
+            font-size: medium;
+        }
+
+        .collapse-list {
+            background: rgb(245,245,245);
+        }
+
+
+        .glyphicon {
+            font-size: medium;
+            color: orange;
+        }
+
+            .glyphicon.big {
+                font-size: large;
+                color: rgb(0, 191, 255);
+            }
+
+        body {
+            font-size: small;
+        }
+    </style>
+
+    <title>Sporting Event Manager</title>
+</head>
+<body class="fixed-nav sticky-footer" id="page-top" style="border-style: groove;background-color: rgb(0, 191, 255); border-color: rgb(0, 191, 255);  border-width: 0; border-spacing: 0;">
+    @*@Html.Partial("_NavBar")*@
+    @Html.Partial("_SideBar")
+    <hr />
+    <div class="content-wrapper" style="background: white; border-style: groove;">
+        @*<div class="container-fluid">*@
+        <div class="container col-md-offset-2">
+            <!-- Breadcrumbs-->
+            @*<ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li class="breadcrumb-item active">My Dashboard</li>
+                </ol>*@
+            @RenderBody()
+        </div>
+        <!-- /.container-->
+        <!-- /.content-wrapper-->
+        <footer class="sticky-footer" style="background-color: rgb(0, 191, 255)">
+            <div class="container">
+                <div class="text-center">
+                    <small>&copy; @DateTime.Now.Year - Sporting Event Manager</small>
+                </div>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fa fa-angle-up"></i>
+        </a>
+    </div>
+    @Scripts.Render("~/bundles/lib")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

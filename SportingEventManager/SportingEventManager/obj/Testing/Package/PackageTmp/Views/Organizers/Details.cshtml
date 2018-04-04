@@ -1,0 +1,16 @@
+﻿@model SportingEventManager.Models.Organizer
+
+@{
+    ViewBag.Title = Model.FirstName + " " + Model.LastName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.FirstName + " " + Model.LastName</h2>
+<ul>
+    <li>First Name: @Model.FirstName</li>
+    <li>Last Name: @Model.LastName</li>    
+    <li>City: @Model.City</li>
+    <li>State: @Model.State</li>
+    <li>State: @Model.Zip</li>
+    @*<li>Sports Events: @Model.SportsEvents</li>*@
+</ul>

@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">    
+    <h1>Sporting Event Manager</h1>
+    <p class="lead"></p>
+    <p><img src="../../Content/images/all-sports-balls.jpg" alt="Home Photo" /></p>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        @*<h2>Organizers</h2>*@
+        @*<p class="menuText-black">
+            All registered event organizers.*@        
+        <p>@Html.ActionLink("Organizers", "Index", "Organizers", null, new { @class = "glyphicon big glyphicon-list" })</p>
+        <p class="menuText-black">All registered event organizers.</p>
+    </div>
+    <div class="col-md-2">
+        @*<h2>Players</h2>*@        
+        <p>@Html.ActionLink("Players", "Index", "Players", null, new { @class = "glyphicon big glyphicon-user" })</p>
+        <p class="menuText-black">All registered players (athletes).</p>
+    </div>
+    <div class="col-md-2">
+        @*<h2>Guardians</h2>*@        
+        <p>@Html.ActionLink("Guardians", "Index", "Guardians", null, new { @class = "glyphicon big glyphicon-check" })</p>
+        <p class="menuText-black">All registered player’s guardians (parents).</p>
+    </div>
+    <div class="col-md-2">
+        @*<h2>Coaches</h2>*@        
+        <p>@Html.ActionLink("Coaches", "Index", "Coaches", null, new { @class = "glyphicon big glyphicon-bullhorn" })</p>
+        <p class="menuText-black">All registered sporting event coaches.</p>
+    </div>
+    <div class="col-md-2">
+        @*<h2>Sports</h2>*@        
+        <p>@Html.ActionLink("Sports", "Index", "Sports", null, new { @class = "glyphicon big glyphicon-flash" })</p>
+        <p class="menuText-black">All registered sports (soccer, football, basketball, etc.).</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        @*<h2>Locations</h2>*@        
+        <p>@Html.ActionLink("Locations", "Index", "Locations", null, new { @class = "glyphicon big glyphicon-map-marker" })</p>
+        <p class="menuText-black">All registered event locations.</p>
+    </div>
+    <div class="col-md-2">
+        @*<h2>Age Ranges</h2>*@        
+        <p>@Html.ActionLink("AgeRanges", "Index", "AgeRanges", null, new { @class = "glyphicon big glyphicon-sort-by-order" })</p>
+        <p class="menuText-black">Holds all available sporting event age ranges.</p>
+    </div>
+    <div class="col-md-2">
+        @*<h2>Genders</h2>*@        
+        <p>@Html.ActionLink("Genders", "Index", "Genders", null, new { @class = "glyphicon big glyphicon-adjust" })</p>
+        <p class="menuText-black">All event gender options (female, male, coed).</p>
+    </div>
+    <div class="col-md-2">
+        @*<h2>Schedules</h2>*@        
+        <p>@Html.ActionLink("Schedules", "Index", "Schedules", null, new { @class = "glyphicon big glyphicon-calendar" })</p>
+        <p class="menuText-black">All registered event schedules (SU, M, T, W, TH, F, SA).</p>
+    </div>
+    <div class="col-md-2">
+        @*<h2>Sports Events</h2>*@        
+        <p>@Html.ActionLink("SportingEvents", "Index", "SportsEvents", null, new { @class = "glyphicon big glyphicon-user" })</p>
+        <p class="menuText-black">All registered sporting events.</p>
+    </div>
+</div>

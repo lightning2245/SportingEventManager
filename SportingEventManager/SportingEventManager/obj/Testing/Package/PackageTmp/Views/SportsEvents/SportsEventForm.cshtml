@@ -1,0 +1,69 @@
+﻿@model SportingEventManager.ViewModels.SportsEventFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New SportsEvent</h2>
+
+@using (Html.BeginForm("Save", "SportsEvents"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+    <div class="form-group">
+        @Html.LabelFor(m => m.SportsEvent.Name)
+        @Html.TextBoxFor(m => m.SportsEvent.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SportsEvent.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SportsEvent.AgeRangeId)
+        @Html.DropDownListFor(m => m.SportsEvent.AgeRangeId, new SelectList(Model.AgeRanges, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SportsEvent.AgeRangeId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SportsEvent.CoachesIds)
+        @Html.ListBoxFor(m => m.SportsEvent.CoachesIds, new MultiSelectList(Model.Coaches, "Id", "FirstName"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SportsEvent.CoachesIds)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SportsEvent.PlayersIds)
+        @Html.ListBoxFor(m => m.SportsEvent.PlayersIds, new MultiSelectList(Model.Players, "Id", "FirstName"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SportsEvent.PlayersIds)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.SportsEvent.GenderId)
+        @Html.DropDownListFor(m => m.SportsEvent.GenderId, new SelectList(Model.Genders, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SportsEvent.GenderId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SportsEvent.LocationId)
+        @Html.DropDownListFor(m => m.SportsEvent.LocationId, new SelectList(Model.Locations, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SportsEvent.LocationId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SportsEvent.OrganizerId)
+        @Html.DropDownListFor(m => m.SportsEvent.OrganizerId, new SelectList(Model.Organizers, "Id", "FirstName"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SportsEvent.OrganizerId)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.SportsEvent.ScheduleId)
+        @Html.DropDownListFor(m => m.SportsEvent.ScheduleId, new SelectList(Model.Schedules, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SportsEvent.ScheduleId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SportsEvent.SportId)
+        @Html.DropDownListFor(m => m.SportsEvent.SportId, new SelectList(Model.Sports, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SportsEvent.SportId)
+    </div>
+
+    
+    @Html.HiddenFor(m => m.SportsEvent.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>    
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,48 @@
+﻿@*<div class="navbar navbar-inverse navbar-fixed-top" style='background: #40E0D0'>*@
+@*<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: rgb(0, 191, 255)">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: rgb(0, 191, 255)" >
+        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</nav>*@
+<div class="navbar navbar-inverse navbar-fixed-top" style='background: #40E0D0'>
+    <div class="container" style='background: #40E0D0'>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                
+            </button>
+            @Html.ActionLink("Sporting Event Manager", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">                
+                <li>@Html.ActionLink("Organizers", "Index", "Organizers")</li>
+                <li>@Html.ActionLink("Players", "Index", "Players")</li>
+                <li>@Html.ActionLink("Guardians", "Index", "Guardians")</li>
+                <li>@Html.ActionLink("Coaches", "Index", "Coaches")</li>
+                <li>@Html.ActionLink("Sports", "Index", "Sports")</li>
+                <li>@Html.ActionLink("Locations", "Index", "Locations")</li>
+                <li>@Html.ActionLink("Age Ranges", "Index", "AgeRanges")</li>
+                <li>@Html.ActionLink("Genders", "Index", "Genders")</li>
+                <li>@Html.ActionLink("Schedules", "Index", "Schedules")</li>
+                <li>@Html.ActionLink("Sports Events", "Index", "SportsEvents")</li>                
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</div>
+
+
+        
+
+

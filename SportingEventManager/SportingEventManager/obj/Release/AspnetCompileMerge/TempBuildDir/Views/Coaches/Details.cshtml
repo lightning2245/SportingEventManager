@@ -1,0 +1,23 @@
+﻿@model SportingEventManager.Models.Coach
+
+@{
+    ViewBag.Title = Model.FirstName + " " + Model.LastName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.FirstName + " " + Model.LastName</h2>
+<ul>
+    <li>First Name: @Model.FirstName</li>
+    <li>Last Name: @Model.LastName</li>
+    <li>City: @Model.City</li>
+    <li>State: @Model.State</li>
+    @*<li>Last Name: @Model.PreferredLocations</li>
+    <li>First Name: @Model.PreferredSports</li>
+    <li>Last Name: @Model.PreferredGenders</li>
+    <li>First Name: @Model.PreferredAgeRanges</li>
+    <li>Last Name: @Model.LastName</li>
+    <li>First Name: @Model.FirstName</li>
+    <li>Last Name: @Model.LastName</li>
+    <li>First Name: @Model.FirstName</li>
+    <li>Last Name: @Model.LastName</li>*@
+</ul>

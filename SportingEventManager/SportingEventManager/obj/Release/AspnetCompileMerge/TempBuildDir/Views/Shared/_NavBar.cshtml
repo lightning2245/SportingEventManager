@@ -1,0 +1,38 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top" style='background: #40E0D0'>
+    <div class="container" style='background: #40E0D0'>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                
+            </button>
+            @Html.ActionLink("Sporting Event Manager", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                @*<li>@Html.ActionLink("New Rental", "New", "Rentals")</li>
+                <li>@Html.ActionLink("Customers", "Index", "Customers")</li>
+                <li>@Html.ActionLink("Movies", "Index", "Movies")</li>*@
+                <li>@Html.ActionLink("Organizers", "Index", "Organizers")</li>
+                <li>@Html.ActionLink("Players", "Index", "Players")</li>
+                <li>@Html.ActionLink("Guardians", "Index", "Guardians")</li>
+                <li>@Html.ActionLink("Coaches", "Index", "Coaches")</li>
+                <li>@Html.ActionLink("Sports", "Index", "Sports")</li>
+                <li>@Html.ActionLink("Locations", "Index", "Locations")</li>
+                <li>@Html.ActionLink("Age Ranges", "Index", "AgeRanges")</li>
+                <li>@Html.ActionLink("Genders", "Index", "Genders")</li>
+                <li>@Html.ActionLink("Schedules", "Index", "Schedules")</li>
+                <li>@Html.ActionLink("Sports Events", "Index", "SportsEvents")</li>                
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,32 @@
+﻿
+@model SportingEventManager.ViewModels.SportFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Sport</h2>
+
+@using (Html.BeginForm("Save", "Sports"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+    <div class="form-group">
+        @Html.LabelFor(m => m.Sport.Name)
+        @Html.TextBoxFor(m => m.Sport.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Sport.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Sport.CoachesIds)
+        @Html.ListBoxFor(m => m.Sport.CoachesIds, new MultiSelectList(Model.Coaches, "Id", "FirstName"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Sport.CoachesIds)
+    </div>
+
+    @Html.HiddenFor(m => m.Sport.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>    
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

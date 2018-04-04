@@ -1,0 +1,30 @@
+﻿@model SportingEventManager.ViewModels.GenderFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Gender</h2>
+
+@using (Html.BeginForm("Save", "Genders"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+    <div class="form-group">
+        @Html.LabelFor(m => m.Gender.Name)
+        @Html.TextBoxFor(m => m.Gender.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Gender.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Gender.CoachesIds)
+        @Html.ListBoxFor(m => m.Gender.CoachesIds, new MultiSelectList(Model.Coaches, "Id", "FirstName"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Gender.CoachesIds)
+    </div>    
+    @Html.HiddenFor(m => m.Gender.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>    
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+        <style>
+            input {
+                font-size: large;
+            }
+        </style>
+
+        <ul>
+            <li>
+                <input class="btn btn-link" id="ManageLink"
+                       style="color: black; font-size: small"
+                       type="button"
+                       title="Manage"
+                       value="@("Hello " + User.Identity.GetUserName() + "!")"
+                       onclick="location.href='@Url.Action(actionName: "Index",controllerName: "Manage", routeValues: null)'" />
+                @*@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })*@
+            </li>
+            <li>
+                <input class="btn btn-link" id="ManageLink"
+                       style="color: black; font-size: small"
+                       type="button"
+                       title="Manage"
+                       value="Log off"
+                       onclick="javascript:document.getElementById('logoutForm').submit()" />
+                @*<a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>*@
+            </li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <input class="btn btn-link" id="registerLink"
+                   style="color: black"
+                   type="button"
+                   title="Register"
+                   value="Register"
+                   onclick="location.href='@Url.Action(actionName: "Register",controllerName: "Account", routeValues: null)'" />
+            @*@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+
+            <input class="btn btn-link" id="loginLink"
+                   style="color: black"
+                   type="button"
+                   title="Login"
+                   value="Login"
+                   onclick="location.href='@Url.Action(actionName: "Login",controllerName: "Account", routeValues: null)'" />
+            @*<li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>*@
+    </ul>
+}

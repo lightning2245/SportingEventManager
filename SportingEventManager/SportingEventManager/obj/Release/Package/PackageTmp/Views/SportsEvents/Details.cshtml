@@ -1,0 +1,19 @@
+﻿@model SportingEventManager.Models.SportsEvent
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+<ul>
+    <li>Event: @Model.Name</li>
+    <li>Age Range: @(Model.AgeRange.Min.ToString() + " to " + Model.AgeRange.Max.ToString())</li>
+    @*<li>Coaches: @Model.Coaches</li>*@
+    <li>Gender: @Model.Gender.Name</li>
+    <li>Location: @Model.Location.Name</li>
+    <li>Organizer: @(Model.Organizer.FirstName + " " + Model.Organizer.LastName))</li>
+    @*<li>Players: @Model.Players</li>*@
+    <li>Schedule: @Model.Schedule.Name</li>
+    <li>Sport: @Model.Sport.Name</li>
+</ul>

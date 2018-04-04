@@ -1,0 +1,61 @@
+﻿@model SportingEventManager.ViewModels.LocationFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>@(Model.Location.Id == 0 ? "New Location" : "Edit " + Model.Location.Name)</h2>
+    <div class="card card-register mx-auto mt-5">
+        <div class="card-header">@(Model.Location.Id == 0 ? "Add Location" : "Edit " + Model.Location.Name)</div>
+        <div class="card-body">
+
+            @using (Html.BeginForm("Save", "Locations"))
+            {
+                @Html.ValidationSummary(true, "Please fix the following errors.")
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Location.Name)
+                    @Html.TextBoxFor(m => m.Location.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Location.Name)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Location.City)
+                    @Html.TextBoxFor(m => m.Location.City, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Location.City)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Location.State)
+                    @Html.TextBoxFor(m => m.Location.State, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Location.State)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Location.Street)
+                    @Html.TextBoxFor(m => m.Location.Street, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Location.Street)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Location.Zip)
+                    @Html.TextBoxFor(m => m.Location.Zip, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Location.Zip)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Location.CoachesIds)
+                    @Html.ListBoxFor(m => m.Location.CoachesIds, new MultiSelectList(Model.Coaches, "Id", "FirstName"), new { @class = "form-control" })
+                    @*@Html.ValidationMessageFor(m => m.Location.CoachesIds)*@
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Location.SportsEventsIds)
+                    @Html.ListBoxFor(m => m.Location.SportsEventsIds, new MultiSelectList(Model.SportsEvents, "Id", "Name"), new { @class = "form-control" })
+                    @*@Html.ValidationMessageFor(m => m.Location.SportsEventsIds)*@
+                </div>
+                @Html.HiddenFor(m => m.Location.Id)
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-primary">Save</button>  }
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">    
+    <h1>Sporting Event Manager</h1>
+    <p class="lead"></p>
+    <p><img src="../../Content/images/all-sports-balls.jpg" alt="Home Photo" /></p>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        <h2>Organizers</h2>
+        <p>
+            All registered event organizers.        
+        <p>@Html.ActionLink("Organizers", "Index", "Organizers", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Players</h2>
+        <p>All registered players (athletes).</p>
+        <p>@Html.ActionLink("Players", "Index", "Players", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Guardians</h2>
+        <p>All registered player’s guardians (parents).</p>
+        <p>@Html.ActionLink("Guardians", "Index", "Guardians", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Coaches</h2>
+        <p>All registered sporting event coaches.</p>
+        <p>@Html.ActionLink("Coaches", "Index", "Coaches", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Sports</h2>
+        <p>All registered sports (soccer, football, basketball, etc.).</p>
+        <p>@Html.ActionLink("Sports", "Index", "Sports", null, new { @class = "btn btn-primary" })</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <h2>Locations</h2>
+        <p>
+            All registered event locations.
+        </p>
+        <p>@Html.ActionLink("Locations", "Index", "Locations", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Age Ranges</h2>
+        <p>Holds all available sporting event age ranges.</p>
+        <p>@Html.ActionLink("Age Ranges", "Index", "AgeRanges", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Genders</h2>
+        <p>All event gender options (female, male, coed).</p>
+        <p>@Html.ActionLink("Genders", "Index", "Genders", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Schedules</h2>
+        <p>All registered event schedules (SU, M, T, W, TH, F, SA).</p>
+        <p>@Html.ActionLink("Schedules", "Index", "Schedules", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Sports Events</h2>
+        <p>All registered sports events.</p>
+        <p>@Html.ActionLink("Sports Events", "Index", "SportsEvents", null, new { @class = "btn btn-primary" })</p>
+    </div>
+</div>

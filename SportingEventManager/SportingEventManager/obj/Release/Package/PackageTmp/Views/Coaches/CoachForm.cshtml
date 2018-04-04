@@ -1,0 +1,87 @@
+﻿@model SportingEventManager.ViewModels.CoachFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>@(Model.Coach.Id == 0 ? "New Coach" : "Edit " + Model.Coach.Name)</h2>
+    <div class="card card-register mx-auto mt-5">
+        <div class="card-header">@(Model.Coach.Id == 0 ? "Register Coach" : "Edit " + Model.Coach.Name)</div>
+        <div class="card-body">
+
+            @using (Html.BeginForm("Save", "Coaches"))
+            {
+                @Html.ValidationSummary(true, "Please fix the following errors.")
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Coach.FirstName)
+                    @Html.TextBoxFor(m => m.Coach.FirstName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Coach.FirstName)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Coach.LastName)
+                    @Html.TextBoxFor(m => m.Coach.LastName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Coach.LastName)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Coach.City)
+                    @Html.TextBoxFor(m => m.Coach.City, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Coach.City)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Coach.State)
+                    @Html.TextBoxFor(m => m.Coach.State, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Coach.State)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Coach.Street)
+                    @Html.TextBoxFor(m => m.Coach.Street, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Coach.Street)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Coach.Zip)
+                    @Html.TextBoxFor(m => m.Coach.Zip, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Coach.Zip)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Coach.LocationsIds)
+                    @Html.ListBoxFor(m => m.Coach.LocationsIds, new MultiSelectList(Model.Locations, "Id", "Name"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Coach.LocationsIds)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Coach.SportsIds)
+                    @Html.ListBoxFor(m => m.Coach.SportsIds, new MultiSelectList(Model.Sports, "Id", "Name"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Coach.SportsIds)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Coach.GendersIds)
+                    @Html.ListBoxFor(m => m.Coach.GendersIds, new MultiSelectList(Model.Genders, "Id", "Name"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Coach.GendersIds)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Coach.AgeRangesIds)
+                    @Html.ListBoxFor(m => m.Coach.AgeRangesIds, new MultiSelectList(Model.AgeRanges, "Id", "Name"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Coach.AgeRangesIds)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Coach.SchedulesIds)
+                    @Html.ListBoxFor(m => m.Coach.SchedulesIds, new MultiSelectList(Model.Schedules, "Id", "Name"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Coach.SchedulesIds)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Coach.SportsEventsIds)
+                    @Html.ListBoxFor(m => m.Coach.SportsEventsIds, new MultiSelectList(Model.SportsEvents, "Id", "Name"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Coach.SportsEventsIds)
+                </div>
+                @Html.HiddenFor(m => m.Coach.Id)
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-primary">Save</button>  }
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

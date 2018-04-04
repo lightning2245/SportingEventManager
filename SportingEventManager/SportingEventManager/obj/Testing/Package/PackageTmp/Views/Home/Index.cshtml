@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">    
+    <h1>Sporting Event Manager</h1>
+    <p class="lead"></p>
+    <p><img src="../../Content/images/all-sports-balls.jpg" alt="Home Photo" /></p>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        <h2>Organizers</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.        
+        <p>@Html.ActionLink("Organizers", "Index", "Organizers", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Players</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p>@Html.ActionLink("Players", "Index", "Players", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Guardians</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p>@Html.ActionLink("Guardians", "Index", "Guardians", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Coaches</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p>@Html.ActionLink("Coaches", "Index", "Coaches", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Sports</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p>@Html.ActionLink("Sports", "Index", "Sports", null, new { @class = "btn btn-primary" })</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <h2>Locations</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p>@Html.ActionLink("Locations", "Index", "Locations", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Age Ranges</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p>@Html.ActionLink("Age Ranges", "Index", "AgeRanges", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Genders</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p>@Html.ActionLink("Genders", "Index", "Genders", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Schedules</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p>@Html.ActionLink("Schedules", "Index", "Schedules", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-2">
+        <h2>Sports Events</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p>@Html.ActionLink("Sports Events", "Index", "SportsEvents", null, new { @class = "btn btn-primary" })</p>
+    </div>
+</div>

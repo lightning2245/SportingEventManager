@@ -1,0 +1,17 @@
+﻿@model SportingEventManager.Models.Location
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+<ul>
+    <li>Location: @Model.Name</li>    
+    <li>City: @Model.City</li>
+    <li>State: @Model.State</li> 
+    <li>Street: @Model.Street</li>
+    <li>Zip: @Model.Zip</li>
+    @*<li>Coaches: @Model.Coaches</li>
+    <li>Sports Events: @Model.SportsEvents</li>*@
+</ul>

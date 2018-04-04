@@ -1,0 +1,71 @@
+﻿@model SportingEventManager.ViewModels.CoachFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Coach</h2>
+
+@using (Html.BeginForm("Save", "Coaches"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.FirstName)
+        @Html.TextBoxFor(m => m.Coach.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Coach.FirstName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.LastName)
+        @Html.TextBoxFor(m => m.Coach.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Coach.LastName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.City)
+        @Html.TextBoxFor(m => m.Coach.City, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Coach.City)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.State)
+        @Html.TextBoxFor(m => m.Coach.State, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Coach.State)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.PreferredLocationsIds)
+        @Html.ListBoxFor(m => m.Coach.PreferredLocationsIds, new MultiSelectList(Model.PreferredLocations, "Id", "Name"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Coach.PreferredLocationsIds)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.PreferredSportsIds)
+        @Html.ListBoxFor(m => m.Coach.PreferredSportsIds, new MultiSelectList(Model.PreferredSports, "Id", "Name"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Coach.PreferredSportsIds)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.PreferredGendersIds)
+        @Html.ListBoxFor(m => m.Coach.PreferredGendersIds, new MultiSelectList(Model.PreferredGenders, "Id", "Name"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Coach.PreferredGendersIds)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.PreferredAgeRangesIds)
+        @Html.ListBoxFor(m => m.Coach.PreferredAgeRangesIds, new MultiSelectList(Model.PreferredAgeRanges, "Id", "Min"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Coach.PreferredAgeRangesIds)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.PreferredSchedulesIds)
+        @Html.ListBoxFor(m => m.Coach.PreferredSchedulesIds, new MultiSelectList(Model.PreferredSchedules, "Id", "Name"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Coach.PreferredSchedulesIds)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Coach.SportsEventsIds)
+        @Html.ListBoxFor(m => m.Coach.SportsEventsIds, new MultiSelectList(Model.SportsEvents, "Id", "Name"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Coach.SportsEventsIds)
+    </div>
+    @Html.HiddenFor(m => m.Coach.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>    
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

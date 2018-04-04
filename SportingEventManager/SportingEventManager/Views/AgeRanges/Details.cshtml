@@ -1,0 +1,12 @@
+﻿@model SportingEventManager.Models.AgeRange
+
+@{
+    ViewBag.Title = Model.Min + "y/o to " + Model.Max + " y/o";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@(Model.Min + " y/o to " + Model.Max + " y/o")</h2>
+<ul>    
+    <li>Min Age: @Model.Min</li>
+    <li>Max Age: @Model.Max</li>    
+</ul>

@@ -1,0 +1,300 @@
+﻿@*<style>
+
+       .menuText {
+           font-size: small;
+           color: white;
+       }
+
+       .glyphicon {
+           font-size: small;
+           color: orange;
+       }
+
+    </style>*@
+
+
+<nav style="background: rgb(0, 191, 255); border-style: groove;" class="navbar navbar-expand-lg navbar-light fixed-top float-right" id="mainNav">
+    <h1 style="background: rgb(0, 191, 255); font-size: large;" class="navbar-brand" href="@Url.Action("Index", "Home")" class="nav-link">Sporting Events Manager</h1>
+    <button style="background: rgb(0, 191, 255)" class="navbar-toggler navbar-toggler-right float-right pull-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div style="background: rgb(0, 191, 255)" class="collapse navbar-collapse" id="navbarResponsive">
+        @Html.Partial("_LoginPartial")
+        <ul class="navbar-nav navbar-sidenav" id="sideNavBar" style="background: rgb(0, 191, 255)">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Home">
+                <a href="@Url.Action("Index", "Home")" class="nav-link">
+                    <div class="menuText-black">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        Home
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Organizers">
+                <a href="#organizersLinks" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#sideNavBar">
+                    <div class="menuText-black">
+                        <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                        Organizers
+                    </div>
+                </a>
+                <ul class="sidenav-second-level collapse" id="organizersLinks">
+                    <li class="class=" sidenav-second-level">
+                        <a href="@Url.Action( "Index", "Organizers")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                                View Organizers
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("New", "Organizers")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>
+                                Register New Organizer
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Players">
+                <a href="#playersLinks" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#sideNavBar">
+                    <div class="menuText-black">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        Players
+                    </div>
+                </a>
+                <ul class="sidenav-second-level collapse" id="playersLinks">
+                    <li>
+                        <a href="@Url.Action( "Index", "Players")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                                View Players
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("New", "Players")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                Register New Player
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Guardians">
+                <a href="#guardiansLinks" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#sideNavBar">
+                    <div class="menuText-black">
+                        <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                        Guardians
+                    </div>
+                </a>
+                <ul class="sidenav-second-level collapse" id="guardiansLinks">
+                    <li>
+                        <a href="@Url.Action( "Index", "Guardians")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                                View Guardians
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("New", "Guardians")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                Register New Guardian
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Coaches">
+                <a href="#coachesLinks" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#sideNavBar">
+                    <div class="menuText-black">
+                        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+                        Coaches
+                    </div>
+                </a>
+                <ul class="sidenav-second-level collapse" id="coachesLinks">
+                    <li>
+                        <a href="@Url.Action( "Index", "Coaches")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                                View Coaches
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("New", "Coaches")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                Register New Coach
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Sports">
+                <a href="#sportsLinks" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#sideNavBar">
+                    <div class="menuText-black">
+                        <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
+                        Sports
+                    </div>
+                </a>
+                <ul class="sidenav-second-level collapse" id="sportsLinks">
+                    <li>
+                        <a href="@Url.Action( "Index", "Sports")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                                View Sports
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("New", "Sports")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                Register New Sport
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Locations">
+                <a href="#locationsLinks" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#sideNavBar">
+                    <div class="menuText-black">
+                        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                        Locations
+                    </div>
+                </a>
+                <ul class="sidenav-second-level collapse" id="locationsLinks">
+                    <li>
+                        <a href="@Url.Action( "Index", "Locations")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                                View Locations
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("New", "Locations")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                Register New Location
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="AgeRanges">
+                <a href="#ageRangesLinks" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#sideNavBar">
+                    <div class="menuText-black">
+                        <span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span>
+                        AgeRanges
+                    </div>
+                </a>
+                <ul class="sidenav-second-level collapse" id="ageRangesLinks">
+                    <li>
+                        <a href="@Url.Action( "Index", "AgeRanges")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                                View AgeRanges
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("New", "AgeRanges")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                Add New Age Range
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Genders">
+                <a href="#gendersLinks" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#sideNavBar">
+                    <div class="menuText-black">
+                        <span class="glyphicon glyphicon-adjust" aria-hidden="true"></span>
+                        Genders
+                    </div>
+                </a>
+                <ul class="sidenav-second-level collapse" id="gendersLinks">
+                    <li>
+                        <a href="@Url.Action( "Index", "Genders")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                                View Genders
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("New", "Genders")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                Add New Gender
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Schedules">
+                <a href="#schedulesLinks" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#sideNavBar">
+                    <div class="menuText-black">
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        Schedules
+                    </div>
+                </a>
+                <ul class="sidenav-second-level collapse" id="schedulesLinks">
+                    <li>
+                        <a href="@Url.Action( "Index", "Schedules")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                                View Schedules
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("New", "Schedules")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                Add New Schedule
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Sporting Events">
+                <a href="#sportsEventsLinks" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#sideNavBar">
+                    <div class="menuText-black">
+                        <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+                        Sporting Events
+                    </div>
+                </a>
+                <ul class="sidenav-second-level collapse" id="sportsEventsLinks">
+                    <li>
+                        <a href="@Url.Action( "Index", "SportsEvents")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                                View Sporting Events
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("New", "SportsEvents")" class="collapse-list">
+                            <div class="menuText-black">
+                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                Register New Sporting Event
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+
+
