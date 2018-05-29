@@ -8,6 +8,7 @@ using SportingEventManager.Models;
 
 namespace SportingEventManager.Controllers.Api
 {
+    [Authorize]
     public class SportsController : ApiController
     {
         private ApplicationDbContext _context;
